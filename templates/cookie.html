@@ -1,0 +1,110 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Janice's Kitchen</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+<header>
+  <a class="page-link" href="/"> Home </a>
+  <a class="page-link" href="/lessons"> Lessons </a>
+  <a class="page-link" href="/cookies"> Cookies </a>
+  <a class="page-link" href="/catering"> Catering </a>
+  <a class="page-link" href="/about"> About </a>
+</header>
+<div class="flex-grid">
+  <div style="flex:1; margin-right: 50px;">
+    <img src= {{ cookieSrc }} />
+  </div>
+  <div style="flex:2; display: flex; flex-direction: column;">
+    <div style="margin-right:25%">
+      <h2> {{ cookieTitle }} </h2>
+      <p>
+        {{ cookieDescription }}
+        <br><br>
+        ${{ cookiePrice }} per dozen
+        <br><br>
+        {% if cookiePrice == 24 %}
+          <br> Must order minimum of two dozen cookies <br><br>
+        {% endif %}
+
+        To place an order please email me at janice.eatingin@gmail.com. I accept Venmo and PayPal.
+        
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<title>Janice's Kitchen</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+<style>
+	body {
+		font-family: "Raleway";
+    text-decoration: none;
+    color: #0f457e;
+	}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway";
+  letter-spacing: 3px;
+  color: #0f457e;
+}
+@media (max-width:700px){img {padding-top:50px;}
+
+</style>
+
+<body>
+
+	<!-- Navbar (sit on top) -->
+	<div class="w3-top">
+		<div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+			<a href="/" class="w3-bar-item w3-button">Janice's Kitchen</a>
+			<div class="w3-right">
+				<a href="/lessons" class="w3-bar-item w3-button">Lessons</a>
+				<a href="/cookies" class="w3-bar-item w3-button">Cookies</a>
+				<a href="/catering" class="w3-bar-item w3-button">Catering</a>
+				<a href="/about" class="w3-bar-item w3-button">About</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page content -->
+	<div class="w3-content" style="max-width:1100px">
+		<!-- Cookie Section -->
+    <div class="w3-row w3-padding-64">
+      <div class="w3-half w3-padding-large">
+        <img src={{ cookieSrc }} class = "w3-image w3-center" width="600" height = "750">
+      </div>
+      <div class="w3-half w3-center w3-padding-large">
+        <h3 class="w3-center"> {{ cookieTitle }} </h3>
+        <p class="w3-large"><i> {{ cookieDescription }}</i></p>
+        <p class="w3-medium">The cookies are made to order, are kosher, and freeze well. 
+          {% if shouldMicrowave == True %} They can be microwaved for 20 seconds for that just baked experience. Perfect for serving with ice cream! 
+          {% endif %}</p>
+        <h6 class="w3-center"> ${{ cookiePrice }} per dozen</h6>
+        <p class="w3-medium"> 
+          {% if cookiePrice <= 24 %} 
+            Must order minimum of two dozen cookies.
+          {% endif %}
+          </p>
+        <h6 class="w3-center"> Ordering & Payment </h6>
+        <p class="w3-medium">To place an order please email me at janice.eatingin@gmail.com. I accept Venmo and PayPal. 
+        <h6 class="w3-center"> Pick-up / Delivery </h6>
+        <p class="w3-medium"> 675 West End Ave. x 92nd </p>
+        <p class="w3-medium">Delivery available for a modest fee for clients walking distance from my home.</p>
+      </div>
+      </div>
+    </div>
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-16">
+  <p>Contact janice.eatingin@gmail.com</p>
+</footer>
+</body>
+</html>
